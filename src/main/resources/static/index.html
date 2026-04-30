@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ERP Sistema — Gestión Empresarial</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <style>
+    body { background: #0a0d14; color: #fff; }
+
+    /* NAV */
+    .navbar { background: rgba(255,255,255,.04); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.08); }
+    .brand-icon { width: 34px; height: 34px; background: #0d6efd; border-radius: 8px;
+      display:flex; align-items:center; justify-content:center; }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex; align-items: center;
+      background: radial-gradient(ellipse 80% 60% at 50% -10%, rgba(13,110,253,.25), transparent);
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(13,110,253,.15); border: 1px solid rgba(13,110,253,.3);
+      color: #6ea8fe; padding: 5px 14px; border-radius: 20px; font-size: .8rem;
+    }
+    .hero h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; }
+    .hero h1 span { color: #0d6efd; }
+    .hero p { color: rgba(255,255,255,.6); font-size: 1.1rem; max-width: 520px; }
+
+    /* FEATURE CARDS */
+    .feature-card {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08);
+      border-radius: 16px; padding: 24px; transition: all .2s;
+    }
+    .feature-card:hover { background: rgba(255,255,255,.07); transform: translateY(-3px); }
+    .feature-icon {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+    .feature-card h6 { font-weight: 700; margin-bottom: 6px; }
+    .feature-card p { color: rgba(255,255,255,.5); font-size: .875rem; margin: 0; }
+
+    /* MODULES */
+    .module-pill {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; padding: 10px 16px;
+      display: flex; align-items: center; gap: 8px;
+      color: rgba(255,255,255,.7); font-size: .875rem;
+    }
+    .module-pill i { color: #0d6efd; }
+
+    /* TECH STACK */
+    .tech-badge {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 8px; padding: 8px 16px; font-size: .8rem;
+      color: rgba(255,255,255,.7); display: inline-flex; align-items: center; gap: 6px;
+    }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(255,255,255,.08); color: rgba(255,255,255,.35); }
+
+    .section-label {
+      color: #6ea8fe; font-size: .75rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .1em;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark sticky-top px-4 py-3">
+  <div class="container-xl d-flex align-items-center justify-content-between w-100">
+    <a class="d-flex align-items-center gap-2 text-decoration-none" href="/">
+      <div class="brand-icon"><i class="bi bi-grid-fill text-white" style="font-size:.85rem"></i></div>
+      <span class="fw-bold text-white">ERP Sistema</span>
+    </a>
+    <div class="d-flex gap-2">
+      <a href="/register.html" class="btn btn-outline-light btn-sm px-3">Crear cuenta</a>
+      <a href="/login.html"    class="btn btn-primary btn-sm px-3">Iniciar Sesión</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container-xl py-5">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="hero-badge mb-4">
+          <i class="bi bi-lightning-charge-fill"></i>
+          Sistema ERP empresarial
+        </div>
+        <h1>Gestiona tu empresa<br/><span>de forma inteligente</span></h1>
+        <p class="mt-4 mb-5">
+          Plataforma ERP completa construida con Java 17, Spring Boot y Clean Architecture.
+          Ventas, inventario, clientes y finanzas en un solo lugar.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="/register.html" class="btn btn-primary btn-lg px-4 fw-semibold">
+            Comenzar gratis <i class="bi bi-arrow-right ms-1"></i>
+          </a>
+          <a href="/login.html" class="btn btn-outline-light btn-lg px-4">
+            Iniciar Sesión
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <!-- Mini dashboard preview -->
+        <div style="background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:20px; padding:20px;">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <div style="width:10px;height:10px;border-radius:50%;background:#ff5f57"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#febc2e"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#28c840"></div>
+            <span class="ms-2 text-white-50" style="font-size:.75rem">dashboard.html</span>
+          </div>
+          <div class="row g-2 mb-3">
+            <div class="col-6">
+              <div style="background:rgba(13,110,253,.15);border:1px solid rgba(13,110,253,.2);border-radius:10px;padding:12px;">
+                <div class="text-white-50" style="font-size:.7rem">Ventas del Mes</div>
+                <div class="fw-bold" style="font-size:1.2rem">$48,250</div>
+                <div class="text-success" style="font-size:.7rem">↑ 12%</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:rgba(255,193,7,.1);border:1px solid rgba(255,193,7,.2);border-radius:10px;padding:12px;">
+                <div class="text-white-50" style="font-size:.7rem">Pedidos Activos</div>
+                <div class="fw-bold" style="font-size:1.2rem">134</div>
+                <div class="text-warning" style="font-size:.7rem">+8 hoy</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:rgba(25,135,84,.15);border:1px solid rgba(25,135,84,.2);border-radius:10px;padding:12px;">
+                <div class="text-white-50" style="font-size:.7rem">Clientes</div>
+                <div class="fw-bold" style="font-size:1.2rem">1,029</div>
+                <div class="text-success" style="font-size:.7rem">+5 esta semana</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div style="background:rgba(220,53,69,.1);border:1px solid rgba(220,53,69,.2);border-radius:10px;padding:12px;">
+                <div class="text-white-50" style="font-size:.7rem">Stock</div>
+                <div class="fw-bold" style="font-size:1.2rem">3,487</div>
+                <div class="text-danger" style="font-size:.7rem">12 bajo mínimo</div>
+              </div>
+            </div>
+          </div>
+          <div style="background:rgba(255,255,255,.04);border-radius:8px;padding:10px;">
+            <div class="d-flex justify-content-between text-white-50 mb-2" style="font-size:.7rem">
+              <span>Pedidos recientes</span><span>Ver todos →</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center py-1 border-bottom border-white border-opacity-10">
+              <span style="font-size:.75rem">#0041 — María López</span>
+              <span class="badge bg-success" style="font-size:.65rem">Completado</span>
+            </div>
+            <div class="d-flex justify-content-between align-items-center py-1">
+              <span style="font-size:.75rem">#0040 — Carlos Ruiz</span>
+              <span class="badge bg-warning text-dark" style="font-size:.65rem">En proceso</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-6" style="padding: 80px 0;">
+  <div class="container-xl">
+    <div class="text-center mb-5">
+      <div class="section-label mb-2">Características</div>
+      <h2 class="fw-bold fs-1">Todo lo que necesita tu empresa</h2>
+      <p class="text-white-50">Una plataforma completa para gestionar cada área del negocio</p>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-primary bg-opacity-10 text-primary">
+            <i class="bi bi-shield-lock"></i>
+          </div>
+          <h6>Autenticación Segura</h6>
+          <p>JWT stateless + BCrypt. Tokens firmados con HS256 y expiración configurable.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-success bg-opacity-10 text-success">
+            <i class="bi bi-layers"></i>
+          </div>
+          <h6>Clean Architecture</h6>
+          <p>Dominio desacoplado de infraestructura. Escalable y fácil de mantener.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-warning bg-opacity-10 text-warning">
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <h6>Dashboard en Tiempo Real</h6>
+          <p>KPIs, pedidos recientes y alertas del sistema en una vista central.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-info bg-opacity-10 text-info">
+            <i class="bi bi-plug"></i>
+          </div>
+          <h6>API REST</h6>
+          <p>Endpoints documentados con validación, errores controlados y HTTP codes correctos.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-danger bg-opacity-10 text-danger">
+            <i class="bi bi-database"></i>
+          </div>
+          <h6>Persistencia JPA</h6>
+          <p>Spring Data JPA con H2 en desarrollo. Listo para migrar a PostgreSQL.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <div class="feature-icon bg-primary bg-opacity-10 text-primary">
+            <i class="bi bi-phone"></i>
+          </div>
+          <h6>Diseño Responsivo</h6>
+          <p>Bootstrap 5. Funciona en escritorio, tablet y móvil sin configuración extra.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section style="padding: 80px 0; background: rgba(255,255,255,.02);">
+  <div class="container-xl">
+    <div class="text-center mb-5">
+      <div class="section-label mb-2">Módulos</div>
+      <h2 class="fw-bold fs-1">Roadmap del ERP</h2>
+      <p class="text-white-50">Módulos disponibles y próximamente</p>
+    </div>
+    <div class="row g-3 justify-content-center">
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="module-pill">
+          <i class="bi bi-check-circle-fill text-success"></i> Autenticación JWT
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="module-pill">
+          <i class="bi bi-check-circle-fill text-success"></i> Dashboard
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="module-pill">
+          <i class="bi bi-hourglass-split"></i> Ventas
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="module-pill">
+          <i class="bi bi-hourglass-split"></i> Inventario
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="module-pill">
+          <i class="bi bi-hourglass-split"></i> Clientes (CRM)
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="module-pill">
+          <i class="bi bi-hourglass-split"></i> Compras
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="module-pill">
+          <i class="bi bi-hourglass-split"></i> Facturación
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-3">
+        <div class="module-pill">
+          <i class="bi bi-hourglass-split"></i> Reportes
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section style="padding: 80px 0;">
+  <div class="container-xl">
+    <div class="text-center mb-5">
+      <div class="section-label mb-2">Stack Tecnológico</div>
+      <h2 class="fw-bold fs-1">Construido con las mejores herramientas</h2>
+    </div>
+    <div class="d-flex flex-wrap gap-2 justify-content-center">
+      <span class="tech-badge"><i class="bi bi-cup-hot-fill text-warning"></i> Java 17</span>
+      <span class="tech-badge"><i class="bi bi-lightning-fill text-success"></i> Spring Boot 3.2</span>
+      <span class="tech-badge"><i class="bi bi-shield-fill text-primary"></i> Spring Security 6</span>
+      <span class="tech-badge"><i class="bi bi-database-fill text-info"></i> Spring Data JPA</span>
+      <span class="tech-badge"><i class="bi bi-key-fill text-warning"></i> JWT (jjwt 0.11)</span>
+      <span class="tech-badge"><i class="bi bi-box-fill text-danger"></i> H2 / PostgreSQL</span>
+      <span class="tech-badge"><i class="bi bi-grid-fill text-primary"></i> Bootstrap 5.3</span>
+      <span class="tech-badge"><i class="bi bi-gear-fill text-secondary"></i> Maven 3</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding: 80px 0; background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(13,110,253,.2), transparent);">
+  <div class="container-xl text-center">
+    <h2 class="fw-bold fs-1 mb-3">¿Listo para empezar?</h2>
+    <p class="text-white-50 mb-5">Crea tu cuenta y accede al dashboard en segundos.</p>
+    <div class="d-flex gap-3 justify-content-center">
+      <a href="/register.html" class="btn btn-primary btn-lg px-5 fw-semibold">
+        Crear cuenta gratis <i class="bi bi-arrow-right ms-1"></i>
+      </a>
+      <a href="/login.html" class="btn btn-outline-light btn-lg px-5">
+        Iniciar Sesión
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4">
+  <div class="container-xl d-flex flex-column flex-md-row align-items-center justify-content-between gap-2">
+    <div class="d-flex align-items-center gap-2">
+      <div class="brand-icon" style="width:26px;height:26px;border-radius:6px;">
+        <i class="bi bi-grid-fill text-white" style="font-size:.65rem"></i>
+      </div>
+      <span class="fw-semibold text-white-50" style="font-size:.85rem">ERP Sistema</span>
+    </div>
+    <span style="font-size:.8rem">Construido con Java · Spring Boot · Clean Architecture</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  if (localStorage.getItem('token')) window.location.href = '/dashboard.html';
+</script>
+</body>
+</html>
